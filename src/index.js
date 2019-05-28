@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './useState';
+import App from './useReducer';
+import Other from './useReducer/otherComponent';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<><App /><Other /></>, document.getElementById('root'));

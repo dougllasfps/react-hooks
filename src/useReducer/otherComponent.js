@@ -1,9 +1,8 @@
 import React, { useReducer } from 'react'
-import { reducer } from './reducer' 
+import useStore from './reducer' 
 
 function Other(){
-
-    const [ state , dispatch ] = useReducer( reducer , {count: 0} );
+    const [ state , dispatch ] = useStore();
 
     return (
         <div>

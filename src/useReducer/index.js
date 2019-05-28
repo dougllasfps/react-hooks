@@ -1,17 +1,24 @@
-import React, { useReducer } from 'react'
-import { reducer } from './reducer' 
+import React from 'react'
+import useStore from './reducer' 
 
 function Reducer(){
+    const [ state , dispatch ] = useStore();
 
-    const [ state , dispatch ] = useReducer( reducer , {count: 0} );
+    const increment = () => {
+        dispatch({ type: 'increment' })
+    }
+
+    function decrement () {
+        dispatch({ type: 'decrement' })
+    }
 
     return (
         <div>
-            <h3>Main</h3>
+            <h3>Contador</h3>
             <span>{`Count: ${state.count}`}</span>
             <br />
-            <button onClick={e => dispatch({type: 'increment'})}>+</button>
-            <button onClick={e => dispatch({type: 'decrement'})}>-</button>
+            <button onClick={increment}>+</button>
+            <button onClick={decrement}>-</button>
         </div>
     )
 }

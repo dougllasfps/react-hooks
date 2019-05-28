@@ -1,6 +1,8 @@
+import {useReducer} from 'react'
 
+const INITIAL_STATE =  {count: 0}
 
-export const reducer = (state = {count: 0}, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
     switch( action.type ){
         case 'increment': 
             return {...state, count: state.count + 1}
@@ -10,3 +12,5 @@ export const reducer = (state = {count: 0}, action) => {
             return state;
     }
 }
+
+export default () => useReducer( reducer, INITIAL_STATE )

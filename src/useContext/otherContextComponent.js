@@ -2,12 +2,12 @@ import React, {useContext} from 'react'
 import  {Context} from './context'
 
 function OtherContextComponent(){    
-    const context = useContext(Context)
+    const { count, increment } = useContext(Context)
 
     return (
         <div>
-            Context value: {context.count} <br />
-            <button onClick={context.increment}>+</button>
+            Context value: {count} <br />
+            <button onClick={increment}>+</button>
         </div>
     )
 }
